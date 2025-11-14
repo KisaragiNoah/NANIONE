@@ -1,0 +1,13 @@
+{
+  "itemGroup.nanione": "Example Mod Tab",
+  "block.nanione.example_block": "Example Block",
+  "item.nanione.example_item": "Example Item",
+
+  "nanione.configuration.title": "Nanione Configs",
+  "nanione.configuration.section.nanione.common.toml": "Nanione Configs",
+  "nanione.configuration.section.nanione.common.toml.title": "Nanione Configs",
+  "nanione.configuration.items": "Item List",
+  "nanione.configuration.logDirtBlock": "Log Dirt Block",
+  "nanione.configuration.magicNumberIntroduction": "Magic Number Text",
+  "nanione.configuration.magicNumber": "Magic Number"
+}
