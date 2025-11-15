@@ -72,8 +72,7 @@ public class ClientEvents {
 
         while (FavoriteKeyMappings.OPEN_FAVORITES_TAB.get().consumeClick()) {
 
-            if (mc.player.gameMode() == null) continue;
-            if (!mc.player.gameMode().isCreative()) continue;
+            if (!mc.gameMode.getPlayerMode().isCreative()) continue;
 
             if (mc.screen instanceof CreativeModeInventoryScreen creativeModeInventoryScreen && creativeModeInventoryScreen instanceof FavoritesTabSelector selector) {
                 selector.nanione$selectFavoritesTab();
