@@ -25,6 +25,16 @@ public class FavoritesManager {
         return true;
     }
 
+    public static boolean isFavorite(ItemStack stack) {
+        if (stack.isEmpty()) return false;
+        for (ItemStack fav : FAVORITES) {
+            if (ItemStack.isSameItemSameComponents(fav, stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static List<ItemStack> getFavoritesStacks() {
         return FAVORITES.stream().map(ItemStack::copy).toList();
     }

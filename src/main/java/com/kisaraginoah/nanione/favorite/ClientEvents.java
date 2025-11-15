@@ -39,9 +39,13 @@ public class ClientEvents {
         ItemStack stack = slot.getItem();
         if (stack.isEmpty()) return;
 
+        ItemStack snapshot = stack.copy();
+
         boolean added = FavoritesManager.toggleFavorite(stack);
 
         Minecraft mc = Minecraft.getInstance();
+
+        if (!mc.gameMode.getPlayerMode().isCreative()) return;
 
         if (mc.player != null) {
             Component title;
@@ -49,13 +53,13 @@ public class ClientEvents {
 
             if (added) {
                 title = Component.translatable("nanione.toast.favorite_added.title");
-                desc = Component.translatable("nanione.toast.favorite_added.desc", stack.getHoverName());
+                desc = Component.translatable("nanione.toast.favorite_added.desc", snapshot.getHoverName());
             } else {
                 title = Component.translatable("nanione.toast.favorite_removed.title");
-                desc = Component.translatable("nanione.toast.favorite_removed.desc", stack.getHoverName());
+                desc = Component.translatable("nanione.toast.favorite_removed.desc", snapshot.getHoverName());
             }
 
-            mc.getToastManager().addToast(new SystemToast(SystemToast.SystemToastId.PERIODIC_NOTIFICATION, title, desc));
+            mc.getToastManager().addToast(new FavoriteToast(snapshot, title, desc));
         }
 
         if (mc.screen instanceof CreativeModeInventoryScreen creativeModeInventoryScreen && creativeModeInventoryScreen instanceof FavoritesTabRefresher refresher) {

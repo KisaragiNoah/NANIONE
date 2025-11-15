@@ -10,4 +10,10 @@ public interface AbstractContainerScreenAccessor {
 
     @Accessor("menu")
     AbstractContainerMenu nanione$getMenu();
+
+    @Accessor("leftPos")
+    int nanione$getLeftPos();
+
+    @Accessor("topPos")
+    int nanione$getTopPos();
 }
