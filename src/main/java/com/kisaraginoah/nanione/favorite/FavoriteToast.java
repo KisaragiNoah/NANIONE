@@ -15,7 +15,7 @@ public class FavoriteToast implements Toast {
 
     private static final ResourceLocation BACKGROUND_SPRITE = ResourceLocation.withDefaultNamespace("toast/recipe");
 
-    private static final long DISPLAY_TIME = 5000L;
+    private static final long DISPLAY_TIME = 3000L;
 
     private final ItemStack icon;
     private final Component title;
