@@ -1,6 +1,6 @@
 package com.kisaraginoah.nanione;
 
-import com.kisaraginoah.nanione.init.ModCreativeTabs;
+import com.kisaraginoah.nanione.module.favorite.FavoritesCreativeTabs;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import org.slf4j.Logger;
@@ -22,6 +22,6 @@ public class Nanione {
     public Nanione(IEventBus modEventBus, ModContainer modContainer) {
         modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 
-        ModCreativeTabs.CREATIVE_TABS.register(modEventBus);
+        FavoritesCreativeTabs.CREATIVE_TABS.register(modEventBus);
     }
 }

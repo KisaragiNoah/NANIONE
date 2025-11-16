@@ -4,7 +4,7 @@ import com.kisaraginoah.nanione.Nanione;
 import com.kisaraginoah.nanione.module.favorite.FavoritesManager;
 import com.kisaraginoah.nanione.module.favorite.FavoritesTabRefresher;
 import com.kisaraginoah.nanione.module.favorite.FavoritesTabSelector;
-import com.kisaraginoah.nanione.init.ModCreativeTabs;
+import com.kisaraginoah.nanione.module.favorite.FavoritesCreativeTabs;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.core.NonNullList;
@@ -37,7 +37,7 @@ public abstract class CreativeModeInventoryScreenMixin implements FavoritesTabRe
 
     @Unique
     private void nanione$rebuildFavorites(boolean resetScroll) {
-        if (selectedTab != ModCreativeTabs.FAVORITES_TAB.get()) return;
+        if (selectedTab != FavoritesCreativeTabs.FAVORITES_TAB.get()) return;
 
         AbstractContainerMenu rawMenu = ((AbstractContainerScreenAccessor) this).nanione$getMenu();
 
@@ -89,6 +89,6 @@ public abstract class CreativeModeInventoryScreenMixin implements FavoritesTabRe
 
     @Override
     public void nanione$selectFavoritesTab() {
-        this.selectTab(ModCreativeTabs.FAVORITES_TAB.get());
+        this.selectTab(FavoritesCreativeTabs.FAVORITES_TAB.get());
     }
 }
